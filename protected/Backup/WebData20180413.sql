@@ -52,7 +52,7 @@ CREATE TABLE `Admin` (
 
 LOCK TABLES `Admin` WRITE;
 /*!40000 ALTER TABLE `Admin` DISABLE KEYS */;
-INSERT INTO `Admin` VALUES (1,'admin','admin','系统管理员','0',1,1,0,1,'2018-04-10 17:40:34');
+INSERT INTO `Admin` VALUES (1,'admin','admin','系统管理员','1,2',1,1,0,1,'2018-04-10 17:40:34');
 /*!40000 ALTER TABLE `Admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +102,7 @@ CREATE TABLE `App` (
   PRIMARY KEY (`App_Id`),
   KEY `App_Close` (`App_Close`) USING BTREE,
   KEY `App_ClassId` (`App_ClassId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `App` (
 
 LOCK TABLES `App` WRITE;
 /*!40000 ALTER TABLE `App` DISABLE KEYS */;
-INSERT INTO `App` VALUES (1,0,0,'878','989','90980','979',0,'2017-06-08 05:43:31');
+INSERT INTO `App` VALUES (1,0,1,'系统管理','','','系统',0,'2017-06-08 05:43:31'),(2,1,0,'应用管理','','','应用',0,'2018-04-12 17:14:10');
 /*!40000 ALTER TABLE `App` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -534,4 +534,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-11  1:41:57
+-- Dump completed on 2018-04-13  1:29:58
