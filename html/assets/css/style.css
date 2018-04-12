@@ -1,5 +1,7 @@
+/*
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,800);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
+*/
 @import url(../plugins/form/icheck/skins/all.css);
 @import url(../plugins/form/switch/switch.css);
 @import url(../plugins/datetime/datetime.css);
@@ -219,7 +221,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   background: #20242b;
   height: 100%;
   left: 0;
-  margin-left: 50px;
+  /*margin-left: 50px;*/
   min-width: 320px;
   overflow: hidden;
   position: absolute;
@@ -430,7 +432,7 @@ body.nav-collapse-in #nav {
 }
 
 a.logo {
-  background: url(../img/logo_white.png) no-repeat center center;
+  /*background: url(../img/logo_white.png) no-repeat center center;*/
   display: block;
   height: 50px;
   position: relative;

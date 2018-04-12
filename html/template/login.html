@@ -55,7 +55,6 @@
 <script type="text/javascript" src="assets/js/caplet.custom.js"></script>
 <script type="text/javascript">
 $(function() {
-	$("body").addClass("full-lg");
 		   //Login animation to center
 			function toCenter(){
 					var mainH=$("#main").outerHeight();
@@ -111,7 +110,7 @@ $(function() {
 							setTimeout(function () { $("#loading-top span").text("验证成功正在登录！...") },500);
 							setTimeout(function () { $("#loading-top span").text("欢迎"+username+"登录！")  }, 1500);
 							$("script[src='assets/js/caplet.custom.js']").remove();
-							setTimeout(function () { $("body").removeClass("full-lg"); $("#wrapper").load("template/dashboard.html")  }, 6200);
+							setTimeout(function () { $("#wrapper").load("template/dashboard.html")  }, 6200);
 						}
 					});
 

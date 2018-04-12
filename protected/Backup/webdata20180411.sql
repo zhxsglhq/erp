@@ -43,7 +43,7 @@ CREATE TABLE `Admin` (
   CONSTRAINT `Admin_ibfk_1` FOREIGN KEY (`Admin_BranchId`) REFERENCES `Branch` (`branch_id`),
   CONSTRAINT `Admin_ibfk_2` FOREIGN KEY (`Admin_DeptId`) REFERENCES `Dept` (`dept_id`),
   CONSTRAINT `Admin_ibfk_3` FOREIGN KEY (`Admin_GroupId`) REFERENCES `AdminGroup` (`admingroup_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,6 +52,7 @@ CREATE TABLE `Admin` (
 
 LOCK TABLES `Admin` WRITE;
 /*!40000 ALTER TABLE `Admin` DISABLE KEYS */;
+INSERT INTO `Admin` VALUES (1,'admin','admin','系统管理员','0',1,1,0,1,'2018-04-10 17:40:34');
 /*!40000 ALTER TABLE `Admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,11 +65,11 @@ DROP TABLE IF EXISTS `AdminGroup`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `AdminGroup` (
   `AdminGroup_Id` int(4) NOT NULL AUTO_INCREMENT,
-  `AdminGroup_Name` varchar(32) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `AdminGroup_Name` varchar(32) NOT NULL DEFAULT '',
   `AdminGroup_Power` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
   PRIMARY KEY (`AdminGroup_Id`),
   KEY `Admin_GroupPower` (`AdminGroup_Power`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,6 +78,7 @@ CREATE TABLE `AdminGroup` (
 
 LOCK TABLES `AdminGroup` WRITE;
 /*!40000 ALTER TABLE `AdminGroup` DISABLE KEYS */;
+INSERT INTO `AdminGroup` VALUES (1,'系统管理组','0');
 /*!40000 ALTER TABLE `AdminGroup` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -324,7 +326,7 @@ CREATE TABLE `Dept` (
   KEY `Department_MDeptId` (`Dept_BranchId`) USING BTREE,
   KEY `Department_Close` (`Dept_Close`) USING BTREE,
   CONSTRAINT `Dept_ibfk_1` FOREIGN KEY (`Dept_BranchId`) REFERENCES `Branch` (`branch_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -333,6 +335,7 @@ CREATE TABLE `Dept` (
 
 LOCK TABLES `Dept` WRITE;
 /*!40000 ALTER TABLE `Dept` DISABLE KEYS */;
+INSERT INTO `Dept` VALUES (1,0,'001','默认部门',1,0,'2018-04-10 17:38:56');
 /*!40000 ALTER TABLE `Dept` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -531,4 +534,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-18 19:01:36
+-- Dump completed on 2018-04-11  1:41:57
