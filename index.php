@@ -6,7 +6,7 @@ ini_set('session.cookie_secure',true);
 ini_set('session.use_only_cookies',true);
 error_reporting(E_ALL & ~ E_NOTICE);
 header('X-Frame-Options:SAMEORIGIN');
-//header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
 header("Content-type:text/html;charset=utf-8");
 date_default_timezone_set('PRC');
 !defined('ROOT_PATH') && define('ROOT_PATH', str_replace('\\', '/', dirname(__FILE__)));

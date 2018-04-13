@@ -15,20 +15,11 @@ class BuildTreeArray
         }
     }
 
-    /**
-     * 获得一个带children的树形数组
-     * @return multitype:
-     */
     public function getTreeArray()
     {
-        //去掉键名
         return array_values($this->treeArray);
     }
 
-    /**
-     * @param int $root 父id值
-     * @return null or array
-     */
     private function getChildren($root)
     {
         foreach ($this->data as &$node){
@@ -36,7 +27,6 @@ class BuildTreeArray
                 $node['children'] = $this->getChildren($node[$this->idKey]);
                 $children[] = $node;
             }
-            //只要一级节点
             if($this->root == $node[$this->fidKey]){
                 $this->treeArray[$node[$this->idKey]] = $node;
             }

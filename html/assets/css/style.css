@@ -232,7 +232,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   background: #e5e9ec;
   height: 100%;
   left: 0;
-  margin-left: 250px;
+  /*margin-left: 250px;*/
   overflow: auto;
   overflow-x: hidden;
   padding-top: 55px;

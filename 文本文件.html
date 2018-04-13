@@ -24,10 +24,9 @@
 </body>
 </html>
 <script type="text/javascript">
-var json = [{"name":"*a","list":[
- {"name":"**a","url":"#a1"},
- {"name":"**aa","list":[
-   {"name":"***a","url":"#a11"},   {"name":"***aa","list":[  {"name":"****a","url":"#a111"},   {"name":"****aa","list":[  {"name":"*****a","url":"#a1111"},   {"name":"*****aa","url":"#a1112"}
+var json = [{"name":"*a","list":[{"name":"**a","url":"#a1"},
+ {"name":"***a","list":[
+   {"name":"****a","url":"#a11"},   {"name":"***aa","list":[  {"name":"****a","url":"#a111"},   {"name":"****a","list":[  {"name":"*****a","url":"#a1111"},   {"name":"*****aa","url":"#a1112"}
    ]}
  ]},
    {"name":"***aaa","url":"#a13"},
@@ -60,15 +59,15 @@ var forTree = function(o){
  var urlstr = "";
  try{
  if(typeof o[i]["url"] == "undefined"){
- urlstr = "<div><span>"+ o[i]["name"] +"</span><ul>";
+ urlstr = "<li>"+ o[i]["name"] +"<li>";
  }else{
- urlstr = "<div><span><a href="+ o[i]["url"] +">"+ o[i]["name"] +"</a></span><ul>"; 
+ urlstr = "<li><a href="+ o[i]["url"] +">"+ o[i]["name"] +"</a><ul>"; 
  }
  str += urlstr;
  if(o[i]["list"] != null){
  forTree(o[i]["list"]);
  }
- str += "</ul></div>";
+ str += "</ul>";
  }catch(e){}
  }
  return str;
@@ -85,41 +84,6 @@ var menuTree = function(){
  $(element).siblings("span").html("[+] " + spanContent) 
  }
  });
- 
- $("#menuTree").find("div span").click(function(){
- var ul = $(this).siblings("ul");
- var spanStr = $(this).html();
- var spanContent = spanStr.substr(3,spanStr.length);
- if(ul.find("div").html() != null){
- if(ul.css("display") == "none"){
- ul.show(300);
- $(this).html("[-] " + spanContent);
- }else{
- ul.hide(300);
- $(this).html("[+] " + spanContent);
- }
- }
- })
-}()
+ }()
 
-/*展开*/
-$("#btn_open").click(function(){
- $("#menuTree ul").show(300);
- curzt("-");
-})
-/*收缩*/
-$("#btn_close").click(function(){
- $("#menuTree ul").hide(300);
- curzt("+");
-})
-function curzt(v){
- $("#menuTree span").each(function(index, element) {
- var ul = $(this).siblings("ul");
- var spanStr = $(this).html();
- var spanContent = spanStr.substr(3,spanStr.length);
- if(ul.find("div").html() != null){
- $(this).html("["+ v +"] " + spanContent);
- }
- }); 
-}
 </script>
